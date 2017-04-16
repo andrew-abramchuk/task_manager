@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="900.0" style="-fx-background-color: EBEBEB;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mavenjavafxapp.controller.MainController">
+    <children>
+      <GridPane prefHeight="382.0" prefWidth="899.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane style="-fx-background-color: #0066ff;">
+               <children>
+                  <HBox style="-fx-background-color: #0080ff;" />
+                  <TableView fx:id="table_users" layoutY="25.0" prefHeight="310.0" prefWidth="285.0" stylesheets="@../styles/style.css" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="25.0">
+                    <columns>
+                      <TableColumn fx:id="column_user_name" prefWidth="75.0" text="ФИО" />
+                      <TableColumn fx:id="column_user_tasksnumber" prefWidth="75.0" text="Кол-во задач" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TableView>
+                  <Label layoutX="95.0" layoutY="6.0" prefHeight="17.0" prefWidth="100.0" text="ПОЛЬЗОВАТЕЛИ" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
+                  </Label>
+                    <Button fx:id="btnAdd_user" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="345.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" style="-fx-border-radius: 0; -fx-background-radius: 0; -fx-background-color: #FFA100; -fx-text-fill: white;" text="Добавить " wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
+                  </Button>
+                    <Button fx:id="btnChange_user" contentDisplay="CENTER" layoutX="104.0" layoutY="345.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" style="-fx-border-radius: 0; -fx-background-radius: 0; -fx-text-fill: white; -fx-background-color: #FFA100;" text="Изменить" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="102.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnMore_user" layoutX="183.0" layoutY="351.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" style="-fx-border-radius: 0; -fx-background-radius: 0; -fx-text-fill: white; -fx-background-color: #FFA100;" text="Подробнее" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="190.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane style="-fx-background-color: #4d94ff;" GridPane.columnIndex="1">
+               <children>
+                  <HBox style="-fx-background-color: #4da6ff;" />
+                  <TableView fx:id="table_tasks" layoutY="25.0" prefHeight="310.0" prefWidth="285.0" stylesheets="@../styles/style.css" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="25.0" GridPane.columnIndex="1">
+                    <columns>
+                      <TableColumn fx:id="column_task_name" prefWidth="75.0" text="Текст задачи" />
+                      <TableColumn fx:id="column_task_stage" prefWidth="75.0" text="Состояние" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TableView>
+                    <Button fx:id="btnAdd_task" layoutX="88.0" layoutY="349.0" mnemonicParsing="false" onAction="#actionButtonPressed" style="-fx-border-radius: 0; -fx-background-radius: 0; -fx-text-fill: white; -fx-background-color: #ffbe4d;" text="Добавить" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="125.0" layoutY="6.0" prefHeight="17.0" prefWidth="100.0" text="ЗАДАЧИ" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane style="-fx-background-color: #99c2ff;" GridPane.columnIndex="2">
+               <children>
+                  <HBox style="-fx-background-color: #99ccff;" />
+                  <TableView fx:id="table_logs" layoutY="25.0" prefHeight="310.0" prefWidth="275.0" stylesheets="@../styles/style.css" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="25.0" GridPane.columnIndex="2">
+                    <columns>
+                      <TableColumn fx:id="column_log_time" prefWidth="75.0" text="Затраченное время" />
+                      <TableColumn fx:id="column_log_comment" prefWidth="75.0" text="Коментарий" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </TableView>
+                  <Label layoutX="124.0" layoutY="11.0" prefHeight="17.0" prefWidth="100.0" text="ЛОГИ" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+    </children>
+</AnchorPane>

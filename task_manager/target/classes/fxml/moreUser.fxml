@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="315.0" style="-fx-background-color: #2eb89c;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mavenjavafxapp.controller.MoreUserController">
+   <children>
+      <Label layoutX="15.0" layoutY="336.0" prefHeight="42.0" prefWidth="285.0" text="Пользователи с задачами более 100 часов потраченного времени" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Segoe UI Black" size="12.0" />
+         </font></Label>
+      <TableView fx:id="table_users" layoutX="15.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="285.0">
+         <columns>
+            <TableColumn fx:id="column_user_nameMore" prefWidth="75.0" text="ФИО" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</Pane>
